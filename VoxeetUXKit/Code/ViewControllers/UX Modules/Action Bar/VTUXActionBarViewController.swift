@@ -14,6 +14,7 @@ import VoxeetSDK
     func switchDeviceSpeakerAction()
     func screenShareAction()
     func leaveAction()
+    func flipAction()
 }
 
 @objc public class VTUXActionBarViewController: UIViewController {
@@ -23,17 +24,17 @@ import VoxeetSDK
     @IBOutlet weak public var speakerButton: UIButton!
     @IBOutlet weak public var screenShareButton: UIButton!
     @IBOutlet weak public var leaveButton: UIButton!
-    
+
     @objc public weak var delegate: VTUXActionBarViewControllerDelegate?
-    
+
     public enum ButtonState: Int {
         case off
         case on
     }
-    
+
     @objc override public func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Action bar configuration.
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             muteButton.isHidden = !actionBarConfiguration.displayMute
@@ -47,7 +48,7 @@ import VoxeetSDK
         cameraButton(state: .off)
         speakerButton(state: .off)
         screenShareButton(state: .off)
-        
+
         #if targetEnvironment(simulator)
         cameraButton.isHidden = true
         speakerButton.isHidden = true
@@ -61,7 +62,7 @@ import VoxeetSDK
         if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
             speakerButton(state: .on)
         }
-        
+
         // Hide speaker button for devices others than iPhones.
         if UIDevice.current.userInterfaceIdiom != .phone {
             speakerButton.isHidden = true
@@ -72,88 +73,92 @@ import VoxeetSDK
         }
         #endif
     }
-    
+
     public func buttons(enabled: Bool) {
         let mode = VoxeetSDK.shared.conference.mode
-        
+
         muteButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         cameraButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         speakerButton.isEnabled(enabled, animated: true)
         screenShareButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         leaveButton.isEnabled(enabled, animated: true)
-        
+
         if mode != .standard {
             muteButton.isHidden = true
             cameraButton.isHidden = true
             screenShareButton.isHidden = true
-            
+
             cameraButton.tag = 0
         }
     }
-    
+
     public func muteButton(state: ButtonState) {
         var customImage: UIImage?
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             customImage = state == .off ? actionBarConfiguration.overrideMuteOff : actionBarConfiguration.overrideMuteOn
         }
-        
+
         toggle(button: muteButton, state: state, defaultImageName: "Mute", customImage: customImage)
     }
-    
+
     public func cameraButton(state: ButtonState) {
         var customImage: UIImage?
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             customImage = state == .off ? actionBarConfiguration.overrideCameraOff : actionBarConfiguration.overrideCameraOn
         }
-        
+
         toggle(button: cameraButton, state: state, defaultImageName: "Camera", customImage: customImage)
     }
-    
+
     public func speakerButton(state: ButtonState) {
         var customImage: UIImage?
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             customImage = state == .off ? actionBarConfiguration.overrideSpeakerOff : actionBarConfiguration.overrideSpeakerOn
         }
-        
+
         toggle(button: speakerButton, state: state, defaultImageName: "Speaker", customImage: customImage)
     }
-    
+
     public func screenShareButton(state: ButtonState) {
         var customImage: UIImage?
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             customImage = state == .off ? actionBarConfiguration.overrideScreenShareOff : actionBarConfiguration.overrideScreenShareOn
         }
-        
+
         toggle(button: screenShareButton, state: state, defaultImageName: "ScreenShare", customImage: customImage)
     }
-    
+
     private func toggle(button: UIButton, state: ButtonState, defaultImageName: String, customImage: UIImage?) {
         let defaultImage = UIImage(named: defaultImageName + (state == .off ? "Off" : "On"), in: Bundle(for: type(of: self)), compatibleWith: nil)
-        
+
         button.tag = state.rawValue
         button.setImage(customImage ?? defaultImage, for: .normal)
     }
-    
+
     /*
      *  MARK: Actions
      */
-    
+
     @IBAction private func muteAction(_ sender: Any) {
         delegate?.muteAction()
     }
-    
+
+    @IBAction private func flipAction(_ sender: Any) {
+        delegate?.flipAction()
+    }
+
     @IBAction private func cameraAction(_ sender: Any) {
         delegate?.cameraAction()
     }
-    
+
     @IBAction private func switchDeviceSpeakerAction(_ sender: Any) {
         delegate?.switchDeviceSpeakerAction()
     }
-    
+
     @IBAction private func screenShareAction(_ sender: Any) {
         delegate?.screenShareAction()
     }
-    
+
     @IBAction private func leaveAction(_ sender: Any) {
         delegate?.leaveAction()
     }
