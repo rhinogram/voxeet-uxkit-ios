@@ -450,7 +450,7 @@ class ConferenceViewController: OverlayViewController {
                 //    self.actionBarVC.speakerButton(state: .on)
                     UIDevice.current.isProximityMonitoringEnabled = false
                 } else {
-                    self.actionBarVC.speakerButton(state: .off)
+                  //  self.actionBarVC.speakerButton(state: .off)
                     UIDevice.current.isProximityMonitoringEnabled = true
                 }
             } else {
@@ -628,9 +628,7 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
                 }
 
                 // Switch to the built in speaker when video starts.
-                if self.actionBarVC.speakerButton.tag == 0 {
                     self.switchDeviceSpeakerAction()
-                }
             } else {
                 self.actionBarVC.cameraButton(state: .off)
                 self.actionBarVC.cameraButton.isUserInteractionEnabled = false
