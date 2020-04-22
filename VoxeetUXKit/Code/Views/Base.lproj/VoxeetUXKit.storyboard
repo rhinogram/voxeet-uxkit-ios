@@ -53,7 +53,7 @@
                                         </connections>
                                     </containerView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-1t-Np3" customClass="VTVideoView" customModule="VoxeetSDK">
-                                        <rect key="frame" x="8" y="603" width="74" height="97"/>
+                                        <rect key="frame" x="8" y="-3" width="74" height="97"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="Ysq-XW-6o9"/>
@@ -118,7 +118,7 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Oy-fMh">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="102" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SeA-R7-z4s"/>
                                         </constraints>
@@ -143,7 +143,7 @@
                                     <constraint firstItem="HzJ-Is-idg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tqV-bw-3TT" secondAttribute="bottom" constant="3" id="IsQ-7u-PK0"/>
                                     <constraint firstAttribute="trailing" secondItem="PNg-nY-rrN" secondAttribute="trailing" id="JIc-7c-33O"/>
                                     <constraint firstItem="ofx-Kp-BPy" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" id="LlU-f4-BBc"/>
-                                    <constraint firstItem="8eR-7d-qYr" firstAttribute="top" secondItem="waJ-1t-Np3" secondAttribute="top" constant="3" id="Of6-Fa-bpn"/>
+                                    <constraint firstAttribute="top" secondItem="waJ-1t-Np3" secondAttribute="top" constant="3" id="Of6-Fa-bpn"/>
                                     <constraint firstItem="zwJ-PR-ChP" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" constant="16" id="P6x-YJ-PaV"/>
                                     <constraint firstAttribute="trailing" secondItem="fPI-7n-Q0u" secondAttribute="trailing" id="PFj-NE-B82"/>
                                     <constraint firstItem="zwJ-PR-ChP" firstAttribute="centerX" secondItem="W21-R7-Fb1" secondAttribute="centerX" id="PLC-Eo-Z36"/>
@@ -158,7 +158,6 @@
                                     <constraint firstAttribute="trailing" secondItem="oyF-Oy-fMh" secondAttribute="trailing" id="ri0-lU-lFi"/>
                                     <constraint firstItem="HzJ-Is-idg" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" constant="8" id="s2a-Xh-KB8"/>
                                     <constraint firstItem="tqV-bw-3TT" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" id="tfs-3y-jk9"/>
-                                    <constraint firstItem="waJ-1t-Np3" firstAttribute="trailing" secondItem="8eR-7d-qYr" secondAttribute="trailing" constant="3" id="wVZ-bN-sq0"/>
                                     <constraint firstItem="oyF-Oy-fMh" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" id="zyb-Pj-XZZ"/>
                                 </constraints>
                             </view>
@@ -379,22 +378,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-oG-ewf">
                                 <rect key="frame" x="69.666666666666686" y="0.0" width="236" height="50"/>
                                 <subviews>
-                                  <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
-                                      <rect key="frame" x="124" y="0.0" width="50" height="50"/>
-                                      <state key="normal" image="FlipOff"/>
-                                      <connections>
-                                          <action selector="flipAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="Taa-xR-Tb1"/>
-                                      </connections>
-                                  </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C0-Wb-8Kp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" image="FlipOff"/>
+                                        <connections>
+                                            <action selector="flipAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="Taa-xR-Tb1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C0-Wb-8Kp">
+                                        <rect key="frame" x="61.999999999999986" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="MuteOff"/>
                                         <connections>
                                             <action selector="muteAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="gaH-5R-8C1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaC-bX-LVD">
-                                        <rect key="frame" x="61.999999999999986" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="124" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="CameraOff"/>
                                         <connections>
                                             <action selector="cameraAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="top-8f-Dx6"/>
@@ -433,10 +432,10 @@
                     <connections>
                         <outlet property="buttonsStackView" destination="6zv-oG-ewf" id="iVi-eq-V8p"/>
                         <outlet property="cameraButton" destination="OaC-bX-LVD" id="JT2-c1-XJo"/>
+                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
                         <outlet property="leaveButton" destination="yZ3-uY-PO4" id="kCv-yq-tSE"/>
                         <outlet property="muteButton" destination="3C0-Wb-8Kp" id="idG-s1-k6a"/>
                         <outlet property="screenShareButton" destination="tPC-GK-JjB" id="vho-pe-hEg"/>
-                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8j-BQ-fAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -504,7 +503,7 @@
     </scenes>
     <resources>
         <image name="CameraOff" width="60" height="60"/>
-        <image name="Flip" width="27" height="31"/>
+        <image name="FlipOff" width="60" height="60"/>
         <image name="Leave" width="60" height="60"/>
         <image name="LiveIndicator" width="16" height="16"/>
         <image name="Minimize" width="50" height="50"/>
