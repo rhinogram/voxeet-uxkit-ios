@@ -30,7 +30,6 @@ class ConferenceViewController: OverlayViewController {
     @IBOutlet weak private var conferenceStateLabelLeadingConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var ownVideoRenderer: VTVideoView!
-    @IBOutlet weak var flipImage: UIImageView!
 
     // MARK: Stored properties
 
@@ -303,7 +302,6 @@ class ConferenceViewController: OverlayViewController {
 
     @objc private func switchCamera(recognizer: UITapGestureRecognizer) {
         let mirrorEffectTransformation = self.ownVideoRenderer.layer.transform.m11 * -1
-        flipImage.isHidden = true
         ownVideoRenderer.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
             self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1.2 * mirrorEffectTransformation, y: 1.2)
@@ -311,7 +309,6 @@ class ConferenceViewController: OverlayViewController {
             UIView.animate(withDuration: 0.10, delay: 0, options: .curveEaseOut, animations: {
                 self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1 * mirrorEffectTransformation, y: 1)
             }) { _ in
-                self.flipImage.isHidden = false
                 self.ownVideoRenderer.isUserInteractionEnabled = true
             }
         }
@@ -365,10 +362,8 @@ class ConferenceViewController: OverlayViewController {
 
         if actionBarVC.cameraButton.tag != 0 && !activeParticipants().isEmpty {
             ownVideoRenderer.alpha = minimized ? 0 : 1
-            flipImage.alpha = minimized ? 0 : 1
         } else {
             ownVideoRenderer.alpha = 0
-            flipImage.alpha = 0
         }
     }
 
@@ -600,7 +595,6 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
 
     func flipAction() {
         let mirrorEffectTransformation = self.ownVideoRenderer.layer.transform.m11 * -1
-        flipImage.isHidden = true
         ownVideoRenderer.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
             self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1.2 * mirrorEffectTransformation, y: 1.2)
@@ -608,7 +602,6 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
             UIView.animate(withDuration: 0.10, delay: 0, options: .curveEaseOut, animations: {
                 self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1 * mirrorEffectTransformation, y: 1)
             }) { _ in
-                self.flipImage.isHidden = false
                 self.ownVideoRenderer.isUserInteractionEnabled = true
             }
         }
@@ -703,7 +696,6 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
         // Hide own video renderer.
         if actionBarVC.cameraButton.tag != 0 {
             ownVideoRenderer.alpha = 0
-            flipImage.alpha = ownVideoRenderer.alpha
         }
 
         // If the conference isn't connected yet, retry the hang up action after few milliseconds to stop the conference.

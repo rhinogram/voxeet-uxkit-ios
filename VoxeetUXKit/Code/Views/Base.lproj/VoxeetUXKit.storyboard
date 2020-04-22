@@ -182,7 +182,6 @@
                         <outlet property="conferenceTimerContainerView" destination="tqV-bw-3TT" id="A9Z-bq-6ZZ"/>
                         <outlet property="conferenceTimerLabel" destination="025-VK-rfT" id="E5O-rE-eDA"/>
                         <outlet property="filePresentationContainerView" destination="PNg-nY-rrN" id="PlX-4y-oyi"/>
-                        <outlet property="flipImage" destination="8eR-7d-qYr" id="s8T-6r-xL9"/>
                         <outlet property="mainContainer" destination="W21-R7-Fb1" id="fgu-B1-wyO"/>
                         <outlet property="minimizeButton" destination="sqb-Oc-h56" id="VbP-RY-SiJ"/>
                         <outlet property="ownVideoRenderer" destination="waJ-1t-Np3" id="CB9-Fe-NqI"/>
