@@ -381,7 +381,7 @@
                                 <subviews>
                                   <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
                                       <rect key="frame" x="124" y="0.0" width="50" height="50"/>
-                                      <state key="normal" image="SpeakerOff"/>
+                                      <state key="normal" image="FlipOff"/>
                                       <connections>
                                           <action selector="flipAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="Taa-xR-Tb1"/>
                                       </connections>
@@ -436,7 +436,7 @@
                         <outlet property="leaveButton" destination="yZ3-uY-PO4" id="kCv-yq-tSE"/>
                         <outlet property="muteButton" destination="3C0-Wb-8Kp" id="idG-s1-k6a"/>
                         <outlet property="screenShareButton" destination="tPC-GK-JjB" id="vho-pe-hEg"/>
-                        <outlet property="speakerButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
+                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8j-BQ-fAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,6 +510,5 @@
         <image name="Minimize" width="50" height="50"/>
         <image name="MuteOff" width="60" height="60"/>
         <image name="ScreenShareOff" width="60" height="60"/>
-        <image name="SpeakerOff" width="60" height="60"/>
     </resources>
 </document>

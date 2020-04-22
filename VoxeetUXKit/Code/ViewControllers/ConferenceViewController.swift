@@ -439,23 +439,23 @@ class ConferenceViewController: OverlayViewController {
         // Update `speakerButton` state.
         DispatchQueue.main.async {
             // Check if the button is available before updating it.
-            if self.actionBarVC.speakerButton.isUserInteractionEnabled == false { return }
+            // if self.actionBarVC.speakerButton.isUserInteractionEnabled == false { return }
 
             // Check current audio route to update UI.
             let output = AVAudioSession.sharedInstance().currentRoute.outputs.first
             if output?.portType == .builtInReceiver || output?.portType == .builtInSpeaker {
-                self.actionBarVC.speakerButton.isEnabled(true, animated: true)
+              //  self.actionBarVC.speakerButton.isEnabled(true, animated: true)
 
                 if output?.portType == .builtInSpeaker {
-                    self.actionBarVC.speakerButton(state: .on)
+                //    self.actionBarVC.speakerButton(state: .on)
                     UIDevice.current.isProximityMonitoringEnabled = false
                 } else {
                     self.actionBarVC.speakerButton(state: .off)
                     UIDevice.current.isProximityMonitoringEnabled = true
                 }
             } else {
-                self.actionBarVC.speakerButton.isEnabled(false, animated: true)
-                self.actionBarVC.speakerButton(state: .off)
+              //  self.actionBarVC.speakerButton.isEnabled(false, animated: true)
+            //    self.actionBarVC.speakerButton(state: .off)
                 UIDevice.current.isProximityMonitoringEnabled = false
             }
         }
@@ -642,14 +642,14 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
     }
 
     func switchDeviceSpeakerAction() {
-        actionBarVC.speakerButton(state: actionBarVC.speakerButton.tag == 0 && actionBarVC.speakerButton.isEnabled ? .on : .off)
+      //  actionBarVC.speakerButton(state: actionBarVC.speakerButton.tag == 0 && actionBarVC.speakerButton.isEnabled ? .on : .off)
 
         // Switch device speaker and set the proximity sensor in line with the current speaker.
-        let builtInSpeaker = actionBarVC.speakerButton.tag != 0
+       let builtInSpeaker = true
         UIDevice.current.isProximityMonitoringEnabled = !builtInSpeaker
-        actionBarVC.speakerButton.isUserInteractionEnabled = false
+      //   actionBarVC.speakerButton.isUserInteractionEnabled = false
         VoxeetSDK.shared.mediaDevice.switchDeviceSpeaker(forceBuiltInSpeaker: builtInSpeaker) {
-            self.actionBarVC.speakerButton.isUserInteractionEnabled = true
+      //      self.actionBarVC.speakerButton.isUserInteractionEnabled = true
         }
     }
 

@@ -21,7 +21,7 @@ import VoxeetSDK
     @IBOutlet weak public var buttonsStackView: UIStackView!
     @IBOutlet weak public var muteButton: UIButton!
     @IBOutlet weak public var cameraButton: UIButton!
-    @IBOutlet weak public var speakerButton: UIButton!
+    @IBOutlet weak public var flipButton: UIButton!
     @IBOutlet weak public var screenShareButton: UIButton!
     @IBOutlet weak public var leaveButton: UIButton!
 
@@ -39,34 +39,26 @@ import VoxeetSDK
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             muteButton.isHidden = !actionBarConfiguration.displayMute
             cameraButton.isHidden = !actionBarConfiguration.displayCamera
-            speakerButton.isHidden = !actionBarConfiguration.displaySpeaker
+            flipButton.isHidden = !actionBarConfiguration.displayFlip
             screenShareButton.isHidden = !actionBarConfiguration.displayScreenShare
             leaveButton.isHidden = !actionBarConfiguration.displayLeave
             leaveButton.setImage(actionBarConfiguration.overrideLeave ?? UIImage(named: "Leave", in: Bundle(for: type(of: self)), compatibleWith: nil), for: .normal)
         }
         muteButton(state: .off)
         cameraButton(state: .off)
-        speakerButton(state: .off)
         screenShareButton(state: .off)
+        flipButton(state: .off)
 
         #if targetEnvironment(simulator)
         cameraButton.isHidden = true
-        speakerButton.isHidden = true
         screenShareButton.isHidden = true
         #else
         // Default behavior to check if video is enabled.
         if VoxeetSDK.shared.conference.defaultVideo {
             cameraButton(state: .on)
-        }
-        // Default behaviour to check if built in spealer is enabled.
-        if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
-            speakerButton(state: .on)
+            flipButton(state: .on)
         }
 
-        // Hide speaker button for devices others than iPhones.
-        if UIDevice.current.userInterfaceIdiom != .phone {
-            speakerButton.isHidden = true
-        }
         // Hide screen share button for devices below iOS 11.
         if #available(iOS 11.0, *) {} else {
             screenShareButton.isHidden = true
@@ -79,9 +71,9 @@ import VoxeetSDK
 
         muteButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         cameraButton.isEnabled(mode != .standard ? false : enabled, animated: true)
-        speakerButton.isEnabled(enabled, animated: true)
         screenShareButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         leaveButton.isEnabled(enabled, animated: true)
+        flipButton.isEnabled(enabled, animated: true)
 
         if mode != .standard {
             muteButton.isHidden = true
@@ -110,13 +102,22 @@ import VoxeetSDK
         toggle(button: cameraButton, state: state, defaultImageName: "Camera", customImage: customImage)
     }
 
-    public func speakerButton(state: ButtonState) {
+    // public func speakerButton(state: ButtonState) {
+    // var customImage: UIImage?
+    // if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
+    // customImage = state == .off ? actionBarConfiguration.overrideSpeakerOff : actionBarConfiguration.overrideSpeakerOn
+  // }
+
+    //    toggle(button: speakerButton, state: state, defaultImageName: "Speaker", customImage: customImage)
+  //  }
+
+    public func flipButton(state: ButtonState) {
         var customImage: UIImage?
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
-            customImage = state == .off ? actionBarConfiguration.overrideSpeakerOff : actionBarConfiguration.overrideSpeakerOn
+            customImage = state == .off ? actionBarConfiguration.overrideFlipOff : actionBarConfiguration.overrideFlipOn
         }
 
-        toggle(button: speakerButton, state: state, defaultImageName: "Speaker", customImage: customImage)
+        toggle(button: flipButton, state: state, defaultImageName: "Flip", customImage: customImage)
     }
 
     public func screenShareButton(state: ButtonState) {
