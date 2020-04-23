@@ -30,7 +30,7 @@ class ConferenceViewController: OverlayViewController {
     @IBOutlet weak private var conferenceStateLabelLeadingConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var ownVideoRenderer: VTVideoView!
-    @IBOutlet weak var flipImage: UIImageView!
+    // @IBOutlet weak var flipImage: UIImageView!
 
     // MARK: Stored properties
 
@@ -109,8 +109,8 @@ class ConferenceViewController: OverlayViewController {
         RunLoop.current.add(conferenceTimer!, forMode: .common)
 
         // Own video renderer tap gesture.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(switchCamera(recognizer:)))
-        ownVideoRenderer.addGestureRecognizer(tap)
+        // let tap = UITapGestureRecognizer(target: self, action: #selector(switchCamera(recognizer:)))
+        // ownVideoRenderer.addGestureRecognizer(tap)
 
         // Sounds set up.
         if let outgoingSoundURL = Bundle(for: type(of: self)).url(forResource: "CallOutgoing", withExtension: "mp3") {
@@ -301,30 +301,6 @@ class ConferenceViewController: OverlayViewController {
         participantsVC.reload()
     }
 
-    @objc private func switchCamera(recognizer: UITapGestureRecognizer) {
-        let mirrorEffectTransformation = self.ownVideoRenderer.layer.transform.m11 * -1
-        flipImage.isHidden = true
-        ownVideoRenderer.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
-            self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1.2 * mirrorEffectTransformation, y: 1.2)
-        }) { _ in
-            UIView.animate(withDuration: 0.10, delay: 0, options: .curveEaseOut, animations: {
-                self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1 * mirrorEffectTransformation, y: 1)
-            }) { _ in
-                self.flipImage.isHidden = false
-                self.ownVideoRenderer.isUserInteractionEnabled = true
-            }
-        }
-
-        ownVideoRenderer.subviews.first?.alpha = 0
-        VoxeetSDK.shared.mediaDevice.switchCamera {
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.10, animations: {
-                    self.ownVideoRenderer.subviews.first?.alpha = 1
-                })
-            }
-        }
-    }
 
     /*
      *  MARK: Minimize / Maximize UI updates
@@ -365,10 +341,8 @@ class ConferenceViewController: OverlayViewController {
 
         if actionBarVC.cameraButton.tag != 0 && !activeParticipants().isEmpty {
             ownVideoRenderer.alpha = minimized ? 0 : 1
-            flipImage.alpha = minimized ? 0 : 1
         } else {
             ownVideoRenderer.alpha = 0
-            flipImage.alpha = 0
         }
     }
 
@@ -600,7 +574,7 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
 
     func flipAction() {
         let mirrorEffectTransformation = self.ownVideoRenderer.layer.transform.m11 * -1
-        flipImage.isHidden = true
+        // flipImage.isHidden = true
         ownVideoRenderer.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
             self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1.2 * mirrorEffectTransformation, y: 1.2)
@@ -608,7 +582,7 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
             UIView.animate(withDuration: 0.10, delay: 0, options: .curveEaseOut, animations: {
                 self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1 * mirrorEffectTransformation, y: 1)
             }) { _ in
-                self.flipImage.isHidden = false
+                // self.flipImage.isHidden = true
                 self.ownVideoRenderer.isUserInteractionEnabled = true
             }
         }
@@ -703,7 +677,6 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
         // Hide own video renderer.
         if actionBarVC.cameraButton.tag != 0 {
             ownVideoRenderer.alpha = 0
-            flipImage.alpha = ownVideoRenderer.alpha
         }
 
         // If the conference isn't connected yet, retry the hang up action after few milliseconds to stop the conference.

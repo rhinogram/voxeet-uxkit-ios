@@ -66,13 +66,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Flip" translatesAutoresizingMaskIntoConstraints="NO" id="8eR-7d-qYr">
-                                        <rect key="frame" x="59" y="606" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="WI4-cE-CTK"/>
-                                            <constraint firstAttribute="height" constant="20" id="bJl-VJ-Dxe"/>
-                                        </constraints>
-                                    </imageView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRz-PV-7pZ">
                                         <rect key="frame" x="0.0" y="46" width="375" height="80"/>
                                         <constraints>
@@ -189,7 +182,6 @@
                         <outlet property="conferenceTimerContainerView" destination="tqV-bw-3TT" id="A9Z-bq-6ZZ"/>
                         <outlet property="conferenceTimerLabel" destination="025-VK-rfT" id="E5O-rE-eDA"/>
                         <outlet property="filePresentationContainerView" destination="PNg-nY-rrN" id="PlX-4y-oyi"/>
-                        <outlet property="flipImage" destination="8eR-7d-qYr" id="s8T-6r-xL9"/>
                         <outlet property="mainContainer" destination="W21-R7-Fb1" id="fgu-B1-wyO"/>
                         <outlet property="minimizeButton" destination="sqb-Oc-h56" id="VbP-RY-SiJ"/>
                         <outlet property="ownVideoRenderer" destination="waJ-1t-Np3" id="CB9-Fe-NqI"/>
@@ -512,7 +504,6 @@
     </scenes>
     <resources>
         <image name="CameraOff" width="60" height="60"/>
-        <image name="Flip" width="27" height="31"/>
         <image name="Leave" width="60" height="60"/>
         <image name="LiveIndicator" width="16" height="16"/>
         <image name="Minimize" width="50" height="50"/>
