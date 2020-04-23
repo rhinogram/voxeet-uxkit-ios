@@ -575,7 +575,7 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
     func flipAction() {
         let mirrorEffectTransformation = self.ownVideoRenderer.layer.transform.m11 * -1
         // flipImage.isHidden = true
-        ownVideoRenderer.isUserInteractionEnabled = false
+        // ownVideoRenderer.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn, animations: {
             self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1.2 * mirrorEffectTransformation, y: 1.2)
         }) { _ in
@@ -583,7 +583,7 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
                 self.ownVideoRenderer.transform = CGAffineTransform(scaleX: 1 * mirrorEffectTransformation, y: 1)
             }) { _ in
                 // self.flipImage.isHidden = true
-                self.ownVideoRenderer.isUserInteractionEnabled = true
+                // self.ownVideoRenderer.isUserInteractionEnabled = true
             }
         }
 
