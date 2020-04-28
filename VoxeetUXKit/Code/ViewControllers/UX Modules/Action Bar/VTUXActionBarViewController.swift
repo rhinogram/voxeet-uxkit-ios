@@ -57,6 +57,12 @@ import VoxeetSDK
         // Default behavior to check if video is enabled.
         if VoxeetSDK.shared.conference.defaultVideo {
             cameraButton(state: .on)
+            // Default behavior to check if video begins with read camera
+            if VoxeetUXKit.shared.conferenceController?.defaultRearCamera == true {
+            VoxeetSDK.shared.conference.startVideo(isDefaultFrontFacing: false) { error in
+            self.cameraButton.isUserInteractionEnabled = true
+            }
+            }
         }
         // Default behaviour to check if built in spealer is enabled.
         if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
