@@ -61,7 +61,7 @@ class ConferenceViewController: OverlayViewController {
     private var hangUpTimer: Timer?
 
     // Sounds.
-    var outgoingSound: AVAudioPlayer?
+    // var outgoingSound: AVAudioPlayer?
     private var joinedSound: AVAudioPlayer?
     private var hangUpSound: AVAudioPlayer?
 
@@ -113,13 +113,13 @@ class ConferenceViewController: OverlayViewController {
         // ownVideoRenderer.addGestureRecognizer(tap)
 
         // Sounds set up.
-        if let outgoingSoundURL = Bundle(for: type(of: self)).url(forResource: "CallOutgoing", withExtension: "mp3") {
-            outgoingSound = try? AVAudioPlayer(contentsOf: outgoingSoundURL, fileTypeHint: AVFileType.mp3.rawValue)
-            outgoingSound?.numberOfLoops = -1
-            if !VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
-                outgoingSound?.prepareToPlay()
-            }
-        }
+        // if let outgoingSoundURL = Bundle(for: type(of: self)).url(forResource: "CallOutgoing", withExtension: "mp3") {
+            // outgoingSound = try? AVAudioPlayer(contentsOf: outgoingSoundURL, fileTypeHint: AVFileType.mp3.rawValue)
+            // outgoingSound?.numberOfLoops = -1
+            // if !VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
+                // outgoingSound?.prepareToPlay()
+            // }
+        // }
         if let joinedSoundURL = Bundle(for: type(of: self)).url(forResource: "CallJoined", withExtension: "mp3") {
             joinedSound = try? AVAudioPlayer(contentsOf: joinedSoundURL, fileTypeHint: AVFileType.mp3.rawValue)
             joinedSound?.volume = 0.4
@@ -243,8 +243,8 @@ class ConferenceViewController: OverlayViewController {
             videoPresentationContainerView.isHidden = true
 
             // Stop outgoing sounds if they were started.
-            outgoingSound?.stop()
-            outgoingSound = nil
+            // outgoingSound?.stop()
+            // outgoingSound = nil
             joinedSound?.stop()
             joinedSound = nil
         default: break
@@ -364,7 +364,7 @@ class ConferenceViewController: OverlayViewController {
             if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
                 joinedSound?.play()
             } else {
-                outgoingSound?.play()
+                // outgoingSound?.play()
             }
         }
     }

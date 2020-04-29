@@ -28,7 +28,7 @@ extension ConferenceViewController: VTConferenceDelegate {
             conferenceStateLabel.text = nil
 
             // Stop outgoing sound when a participant enters in conference.
-            outgoingSound?.stop()
+            // outgoingSound?.stop()
 
             // Update participant's audio position to listen each people clearly in a 3D environment.
             updateParticipantPosition()
