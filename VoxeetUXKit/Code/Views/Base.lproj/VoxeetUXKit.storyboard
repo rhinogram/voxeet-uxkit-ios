@@ -22,7 +22,7 @@
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zwJ-PR-ChP">
                                         <rect key="frame" x="16" y="394" width="343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <color key="textColor" red="0.8784313725490196" green="0.87688372459999997" blue="0.87688372459999997" alpha="0.40466074486301368" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-Is-idg">
@@ -79,10 +79,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="25.333333333333332"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-BH-YcB">
-                                                <rect key="frame" x="153.66666666666666" y="3" width="68" height="19.333333333333332"/>
+                                                <rect key="frame" x="163.66666666666666" y="3" width="48" height="19.333333333333332"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="025-VK-rfT">
-                                                        <rect key="frame" x="20" y="0.0" width="48" height="19.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="19.333333333333332"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="S1r-dA-Bxe"/>
                                                         </constraints>
@@ -340,7 +340,7 @@
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-bp-sbt" customClass="VTVideoView" customModule="VoxeetSDK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="contentFill" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -372,7 +372,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-oG-ewf">
-                                <rect key="frame" x="69.666666666666686" y="0.0" width="236" height="50"/>
+                                <rect key="frame" x="38.666666666666657" y="0.0" width="298" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -382,7 +382,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3C0-Wb-8Kp">
-                                        <rect key="frame" x="61.999999999999986" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="62" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="MuteOff"/>
                                         <connections>
                                             <action selector="muteAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="gaH-5R-8C1"/>
@@ -413,7 +413,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Frj">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="248" y="0.0" width="50" height="50"/>
                                         <state key="normal" image="SpeakerOff"/>
                                         <connections>
                                             <action selector="switchDeviceSpeakerAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="Taa-xR-Tb2"/>
@@ -435,10 +435,10 @@
                     <connections>
                         <outlet property="buttonsStackView" destination="6zv-oG-ewf" id="iVi-eq-V8p"/>
                         <outlet property="cameraButton" destination="OaC-bX-LVD" id="JT2-c1-XJo"/>
+                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
                         <outlet property="leaveButton" destination="yZ3-uY-PO4" id="kCv-yq-tSE"/>
                         <outlet property="muteButton" destination="3C0-Wb-8Kp" id="idG-s1-k6a"/>
                         <outlet property="screenShareButton" destination="tPC-GK-JjB" id="vho-pe-hEg"/>
-                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
                         <outlet property="speakerButton" destination="0p0-Ga-Frj" id="G26-CE-1rg"/>
                     </connections>
                 </viewController>
@@ -453,7 +453,7 @@
                     <view key="view" contentMode="scaleToFill" id="up9-b3-uFU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="NAh-m9-oGW"/>
                     </view>
                 </viewController>
