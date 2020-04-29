@@ -20,6 +20,9 @@ import VoxeetSDK
     /// Video starts with front facing camera by default. If true, the video will start with rear facing camera.
     @objc public var defaultRearCamera = false
 
+    /// Video starts with mic on by default. If true, the video will start with mic off.
+    @objc public var defaultMute = false
+
     /// If true, the conference will behave like a cellular call. if a participant hangs up or declines a call, the caller will be disconnected.
     @objc public var telecom = false {
         didSet {
