@@ -40,7 +40,7 @@ import VoxeetSDK
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             muteButton.isHidden = !actionBarConfiguration.displayMute
             cameraButton.isHidden = !actionBarConfiguration.displayCamera
-            speakerButton.isHidden = !actionBarConfiguration.displaySpeaker
+            speakerButton.isHidden = true
             flipButton.isHidden = !actionBarConfiguration.displayFlip
             screenShareButton.isHidden = !actionBarConfiguration.displayScreenShare
             leaveButton.isHidden = !actionBarConfiguration.displayLeave
