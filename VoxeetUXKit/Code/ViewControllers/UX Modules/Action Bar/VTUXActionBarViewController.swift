@@ -83,6 +83,14 @@ import VoxeetSDK
             screenShareButton.isHidden = true
         }
         #endif
+        if VoxeetUXKit.shared.conferenceController?.defaultMute == true {
+          if let participant = VoxeetSDK.shared.session.participant {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+              VoxeetSDK.shared.conference.mute(participant: participant, isMuted: true)
+              self.muteButton(state: .on)
+            }
+          }
+        }
     }
 
     public func buttons(enabled: Bool) {
