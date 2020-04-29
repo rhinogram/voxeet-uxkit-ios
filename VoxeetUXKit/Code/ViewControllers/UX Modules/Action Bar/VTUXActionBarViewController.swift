@@ -24,6 +24,7 @@ import VoxeetSDK
     @IBOutlet weak public var speakerButton: UIButton!
     @IBOutlet weak public var screenShareButton: UIButton!
     @IBOutlet weak public var leaveButton: UIButton!
+    @IBOutlet weak public var flipButton: UIButton!
 
     @objc public weak var delegate: VTUXActionBarViewControllerDelegate?
 
@@ -39,7 +40,8 @@ import VoxeetSDK
         if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
             muteButton.isHidden = !actionBarConfiguration.displayMute
             cameraButton.isHidden = !actionBarConfiguration.displayCamera
-            speakerButton.isHidden = !actionBarConfiguration.displaySpeaker
+            speakerButton.isHidden = true
+            flipButton.isHidden = !actionBarConfiguration.displayFlip
             screenShareButton.isHidden = !actionBarConfiguration.displayScreenShare
             leaveButton.isHidden = !actionBarConfiguration.displayLeave
             leaveButton.setImage(actionBarConfiguration.overrideLeave ?? UIImage(named: "Leave", in: Bundle(for: type(of: self)), compatibleWith: nil), for: .normal)
@@ -48,23 +50,26 @@ import VoxeetSDK
         cameraButton(state: .off)
         speakerButton(state: .off)
         screenShareButton(state: .off)
+        flipButton(state: .off)
 
         #if targetEnvironment(simulator)
         cameraButton.isHidden = true
         speakerButton.isHidden = true
         screenShareButton.isHidden = true
+        flipButton.isHidden = true
         #else
         // Default behavior to check if video is enabled.
         if VoxeetSDK.shared.conference.defaultVideo {
             cameraButton(state: .on)
-            // Default behavior to check if video begins with read camera
+            flipButton(state: .on)
+            // Default behavior to check if video begins with rear camera
             if VoxeetUXKit.shared.conferenceController?.defaultRearCamera == true {
             VoxeetSDK.shared.conference.startVideo(isDefaultFrontFacing: false) { error in
             self.cameraButton.isUserInteractionEnabled = true
             }
             }
         }
-        // Default behaviour to check if built in spealer is enabled.
+        // Default behaviour to check if built in speaker is enabled.
         if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
             speakerButton(state: .on)
         }
@@ -78,6 +83,14 @@ import VoxeetSDK
             screenShareButton.isHidden = true
         }
         #endif
+        if VoxeetUXKit.shared.conferenceController?.defaultMute == true {
+          if let participant = VoxeetSDK.shared.session.participant {
+          DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+              VoxeetSDK.shared.conference.mute(participant: participant, isMuted: true)
+              self.muteButton(state: .on)
+            }
+          }
+        }
     }
 
     public func buttons(enabled: Bool) {
@@ -88,11 +101,13 @@ import VoxeetSDK
         speakerButton.isEnabled(enabled, animated: true)
         screenShareButton.isEnabled(mode != .standard ? false : enabled, animated: true)
         leaveButton.isEnabled(enabled, animated: true)
+        flipButton.isEnabled(mode != .standard ? false : enabled, animated: true)
 
         if mode != .standard {
             muteButton.isHidden = true
             cameraButton.isHidden = true
             screenShareButton.isHidden = true
+            flipButton.isHidden = true
 
             cameraButton.tag = 0
         }
@@ -114,6 +129,15 @@ import VoxeetSDK
         }
 
         toggle(button: cameraButton, state: state, defaultImageName: "Camera", customImage: customImage)
+    }
+
+    public func flipButton(state: ButtonState) {
+        var customImage: UIImage?
+        if let actionBarConfiguration = VoxeetUXKit.shared.conferenceController?.configuration.actionBar {
+            customImage = state == .off ? actionBarConfiguration.overrideFlipOff : actionBarConfiguration.overrideFlipOn
+        }
+
+        toggle(button: flipButton, state: state, defaultImageName: "Flip", customImage: customImage)
     }
 
     public func speakerButton(state: ButtonState) {

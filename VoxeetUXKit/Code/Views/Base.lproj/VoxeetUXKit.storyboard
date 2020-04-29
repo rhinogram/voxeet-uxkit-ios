@@ -415,6 +415,13 @@
                                             <action selector="leaveAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="n3w-zD-mEF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Frj">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" image="SpeakerOff"/>
+                                        <connections>
+                                            <action selector="switchDeviceSpeakerAction:" destination="Q3B-h3-n53" eventType="touchUpInside" id="Taa-xR-Tb2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2we-VF-3zH"/>
@@ -434,7 +441,8 @@
                         <outlet property="leaveButton" destination="yZ3-uY-PO4" id="kCv-yq-tSE"/>
                         <outlet property="muteButton" destination="3C0-Wb-8Kp" id="idG-s1-k6a"/>
                         <outlet property="screenShareButton" destination="tPC-GK-JjB" id="vho-pe-hEg"/>
-                        <outlet property="speakerButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
+                        <outlet property="flipButton" destination="0p0-Ga-Fvj" id="G26-CE-1lG"/>
+                        <outlet property="speakerButton" destination="0p0-Ga-Frj" id="G26-CE-1rg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8j-BQ-fAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
