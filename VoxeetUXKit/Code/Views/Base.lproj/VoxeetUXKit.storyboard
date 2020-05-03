@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vX9-VW-Q3b">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="vX9-VW-Q3b" customClass="ConferenceViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0gX-6N-twr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W21-R7-Fb1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zwJ-PR-ChP">
-                                        <rect key="frame" x="16" y="394" width="343" height="24"/>
+                                        <rect key="frame" x="16" y="321.5" width="343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-Is-idg">
-                                        <rect key="frame" x="8" y="306" width="359" height="200"/>
+                                        <rect key="frame" x="8" y="233.5" width="359" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="200" id="tWt-9q-j6Z"/>
                                         </constraints>
@@ -35,25 +35,19 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-7n-Q0u">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="8Au-2j-3sL" kind="embed" id="wVa-ZQ-HSx"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-nY-rrN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="d8H-mt-b9e" kind="embed" id="4Fq-fI-VS2"/>
                                         </connections>
                                     </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-Kp-BPy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                        <connections>
-                                            <segue destination="KU8-WY-T4j" kind="embed" id="4hz-nw-FBV"/>
-                                        </connections>
-                                    </containerView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-1t-Np3" customClass="VTVideoView" customModule="VoxeetSDK">
-                                        <rect key="frame" x="8" y="603" width="74" height="97"/>
+                                        <rect key="frame" x="8" y="492" width="74" height="97"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="Ysq-XW-6o9"/>
@@ -67,7 +61,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRz-PV-7pZ">
-                                        <rect key="frame" x="0.0" y="46" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="2" width="375" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="4W8-fd-4kf"/>
                                         </constraints>
@@ -76,18 +70,18 @@
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-bw-3TT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-BH-YcB">
-                                                <rect key="frame" x="163.66666666666666" y="3" width="48" height="19.333333333333332"/>
+                                                <rect key="frame" x="163.5" y="3" width="48" height="19.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="025-VK-rfT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="19.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="48" height="19.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="S1r-dA-Bxe"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                        <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -102,7 +96,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqb-Oc-h56">
-                                        <rect key="frame" x="0.0" y="46" width="60" height="40"/>
+                                        <rect key="frame" x="0.0" y="2" width="60" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="YT6-Di-WPK"/>
@@ -115,7 +109,7 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Oy-fMh">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="597" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SeA-R7-z4s"/>
                                         </constraints>
@@ -123,8 +117,14 @@
                                             <segue destination="Q3B-h3-n53" kind="embed" id="Agp-B8-dje"/>
                                         </connections>
                                     </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-Kp-BPy">
+                                        <rect key="frame" x="-8" y="-232" width="414" height="896"/>
+                                        <connections>
+                                            <segue destination="KU8-WY-T4j" kind="embed" id="4hz-nw-FBV"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HzJ-Is-idg" secondAttribute="bottom" constant="10" id="2w6-6b-gyf"/>
                                     <constraint firstItem="ofx-Kp-BPy" firstAttribute="top" secondItem="W21-R7-Fb1" secondAttribute="top" id="5AC-NV-EvP"/>
@@ -157,6 +157,35 @@
                                     <constraint firstItem="oyF-Oy-fMh" firstAttribute="leading" secondItem="W21-R7-Fb1" secondAttribute="leading" id="zyb-Pj-XZZ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" id="0dm-dN-l2x">
+                                <rect key="frame" x="0.0" y="25" width="375" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="w9A-5B-y04">
+                                        <rect key="frame" x="163.5" y="3" width="48" height="14"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3K-1R-Etn">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="14"/>
+                                                <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="j4Z-hQ-yad"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <color key="textColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="w9A-5B-y04" secondAttribute="bottom" constant="3" id="4ko-7I-G3n"/>
+                                    <constraint firstItem="w9A-5B-y04" firstAttribute="centerX" secondItem="0dm-dN-l2x" secondAttribute="centerX" id="L0t-tC-mkp"/>
+                                    <constraint firstItem="w9A-5B-y04" firstAttribute="top" secondItem="0dm-dN-l2x" secondAttribute="top" constant="3" id="iqT-eO-2nf"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="c07-FE-6Rt"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686274509802" green="0.24705882352941178" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -175,7 +204,7 @@
                         <outlet property="conferenceStateLabel" destination="zwJ-PR-ChP" id="jGt-qG-vvk"/>
                         <outlet property="conferenceStateLabelLeadingConstraint" destination="P6x-YJ-PaV" id="goH-U1-Z7e"/>
                         <outlet property="conferenceTimerContainerView" destination="tqV-bw-3TT" id="A9Z-bq-6ZZ"/>
-                        <outlet property="conferenceTimerLabel" destination="025-VK-rfT" id="E5O-rE-eDA"/>
+                        <outlet property="conferenceTimerLabel" destination="s3K-1R-Etn" id="E5O-rE-eDAA"/>
                         <outlet property="filePresentationContainerView" destination="PNg-nY-rrN" id="PlX-4y-oyi"/>
                         <outlet property="mainContainer" destination="W21-R7-Fb1" id="fgu-B1-wyO"/>
                         <outlet property="minimizeButton" destination="sqb-Oc-h56" id="VbP-RY-SiJ"/>
@@ -290,7 +319,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-Tf-i4P">
-                                <rect key="frame" x="122" y="29.666666666666671" width="115" height="141"/>
+                                <rect key="frame" x="122" y="29.5" width="115" height="141"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iK-9i-XAE" customClass="UIRoundImageView" customModule="VoxeetUXKit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
@@ -301,7 +330,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzK-hu-iKp">
-                                        <rect key="frame" x="37.333333333333343" y="123" width="40.666666666666657" height="18"/>
+                                        <rect key="frame" x="37.5" y="123" width="40.5" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="qOZ-tY-LwL"/>
                                         </constraints>
@@ -335,11 +364,11 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerVideoViewController" id="8Au-2j-3sL" customClass="VTUXSpeakerVideoViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVH-yW-yZy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-bp-sbt" customClass="VTVideoView" customModule="VoxeetSDK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="contentFill" value="YES"/>
@@ -372,7 +401,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-oG-ewf">
-                                <rect key="frame" x="38.666666666666657" y="0.0" width="298" height="50"/>
+                                <rect key="frame" x="38.5" y="0.0" width="298" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -451,7 +480,7 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerVideoPresentationViewController" id="KU8-WY-T4j" customClass="VTUXSpeakerVideoPresentationViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="up9-b3-uFU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="NAh-m9-oGW"/>
@@ -466,14 +495,14 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerFilePresentationViewController" id="d8H-mt-b9e" customClass="VTUXSpeakerFilePresentationViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oOu-kT-T0U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="g9B-JO-0hn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="naL-xM-P3Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
