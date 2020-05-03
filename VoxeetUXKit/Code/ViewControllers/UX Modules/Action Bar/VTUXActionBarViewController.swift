@@ -63,11 +63,11 @@ import VoxeetSDK
             cameraButton(state: .on)
             flipButton(state: .on)
             // Default behavior to check if video begins with rear camera
-            if VoxeetUXKit.shared.conferenceController?.defaultRearCamera == true {
-            VoxeetSDK.shared.conference.startVideo(isDefaultFrontFacing: false) { error in
-            self.cameraButton.isUserInteractionEnabled = true
-            }
-            }
+            // if VoxeetUXKit.shared.conferenceController?.defaultRearCamera == true {
+            // VoxeetSDK.shared.conference.startVideo(isDefaultFrontFacing: false) { error in
+            // self.cameraButton.isUserInteractionEnabled = true
+            // }
+          //   }
         }
         // Default behaviour to check if built in speaker is enabled.
         if VoxeetSDK.shared.conference.defaultBuiltInSpeaker {
@@ -83,14 +83,14 @@ import VoxeetSDK
             screenShareButton.isHidden = true
         }
         #endif
-        if VoxeetUXKit.shared.conferenceController?.defaultMute == true {
-          if let participant = VoxeetSDK.shared.session.participant {
-          DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-              VoxeetSDK.shared.conference.mute(participant: participant, isMuted: true)
-              self.muteButton(state: .on)
-            }
-          }
-        }
+        // if VoxeetUXKit.shared.conferenceController?.defaultMute == true {
+        //   if let participant = VoxeetSDK.shared.session.participant {
+        //   DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        //       VoxeetSDK.shared.conference.mute(participant: participant, isMuted: true)
+        //       self.muteButton(state: .on)
+        //     }
+        //   }
+      //   }
     }
 
     public func buttons(enabled: Bool) {

@@ -35,19 +35,19 @@ import VoxeetSDK
         }
     }
 
-    @objc public var defaultRearCamera = false {
-        didSet {
-            initialize()
-            conferenceController?.defaultRearCamera = defaultRearCamera
-            }
-    }
+    // @objc public var defaultRearCamera = false {
+    //     didSet {
+    //         initialize()
+    //         conferenceController?.defaultRearCamera = defaultRearCamera
+    //         }
+    // }
 
-    @objc public var defaultMute = false {
-        didSet {
-            initialize()
-            conferenceController?.defaultMute = defaultMute
-            }
-    }
+    // @objc public var defaultMute = false {
+    //     didSet {
+    //         initialize()
+    //         conferenceController?.defaultMute = defaultMute
+    //         }
+    // }
 
     /*
      *  MARK: Initialization
