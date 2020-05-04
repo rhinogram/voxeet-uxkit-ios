@@ -175,7 +175,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,7 +204,8 @@
                         <outlet property="conferenceStateLabel" destination="zwJ-PR-ChP" id="jGt-qG-vvk"/>
                         <outlet property="conferenceStateLabelLeadingConstraint" destination="P6x-YJ-PaV" id="goH-U1-Z7e"/>
                         <outlet property="conferenceTimerContainerView" destination="tqV-bw-3TT" id="A9Z-bq-6ZZ"/>
-                        <outlet property="conferenceTimerLabel" destination="s3K-1R-Etn" id="E5O-rE-eDAA"/>
+                        <outlet property="conferenceTimerLabel" destination="025-VK-rfT" id="E5O-rE-eDA"/>
+                        <outlet property="conferenceTimerLabelMain" destination="s3K-1R-Etn" id="E5O-rE-eDAA"/>
                         <outlet property="filePresentationContainerView" destination="PNg-nY-rrN" id="PlX-4y-oyi"/>
                         <outlet property="mainContainer" destination="W21-R7-Fb1" id="fgu-B1-wyO"/>
                         <outlet property="minimizeButton" destination="sqb-Oc-h56" id="VbP-RY-SiJ"/>

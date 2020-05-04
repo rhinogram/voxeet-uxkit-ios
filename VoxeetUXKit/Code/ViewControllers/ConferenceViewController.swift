@@ -23,6 +23,7 @@ class ConferenceViewController: OverlayViewController {
 
     @IBOutlet weak private var conferenceTimerContainerView: UIView!
     @IBOutlet weak private var conferenceTimerLabel: UILabel!
+    @IBOutlet weak private var conferenceTimerLabelMain: UILabel!
 
     @IBOutlet weak var minimizeButton: UIButton!
 
@@ -186,6 +187,12 @@ class ConferenceViewController: OverlayViewController {
         conferenceTimerLabel.layer.shadowRadius = 3
         conferenceTimerLabel.layer.shadowOffset = CGSize(width: -2, height: 0)
         conferenceTimerLabel.layer.shadowPath = UIBezierPath(rect: conferenceTimerLabel.bounds).cgPath
+
+        // Conference timer's shadow.
+        conferenceTimerLabelMain.layer.shadowOpacity = 0.1
+        conferenceTimerLabelMain.layer.shadowRadius = 3
+        conferenceTimerLabelMain.layer.shadowOffset = CGSize(width: -2, height: 0)
+        conferenceTimerLabelMain.layer.shadowPath = UIBezierPath(rect: conferenceTimerLabelMain.bounds).cgPath
 
         // Minimize button.
         let overlayConfig = VoxeetUXKit.shared.conferenceController?.configuration.overlay
@@ -378,8 +385,10 @@ class ConferenceViewController: OverlayViewController {
         DispatchQueue.main.async {
             if hour >= 1 {
                 self.conferenceTimerLabel.text = String(format: "%02.0f:%02.0f:%02.0f", floor(hour), floor(minute), floor(second))
+                self.conferenceTimerLabelMain.text = String(format: "%02.0f:%02.0f:%02.0f", floor(hour), floor(minute), floor(second))
             } else {
                 self.conferenceTimerLabel.text = String(format: "%02.0f:%02.0f", floor(minute), floor(second))
+                self.conferenceTimerLabelMain.text = String(format: "%02.0f:%02.0f", floor(minute), floor(second))
             }
         }
     }
