@@ -10,13 +10,19 @@ import VoxeetSDK
 
 @objc public class VTUXConferenceController: NSObject {
     private var viewController: ConferenceViewController?
-    
+
     /// Conference configuration.
     @objc public var configuration = VTUXConferenceControllerConfiguration()
-    
+
     /// Conference appear animation default starts maximized. If false, the conference will appear minimized.
     @objc public var appearMaximized = true
-    
+
+    /// Video starts with front facing camera by default. If true, the video will start with rear facing camera.
+    // @objc public var defaultRearCamera = false
+
+    /// Video starts with mic on by default. If true, the video will start with mic off.
+    // @objc public var defaultMute = false
+
     /// If true, the conference will behave like a cellular call. if a participant hangs up or declines a call, the caller will be disconnected.
     @objc public var telecom = false {
         didSet {
@@ -27,10 +33,10 @@ import VoxeetSDK
             }
         }
     }
-    
+
     public override init() {
         super.init()
-        
+
         // Voxeet's socket notifications.
         NotificationCenter.default.addObserver(self, selector: #selector(ownParticipantSwitched), name: .VTOwnParticipantSwitched, object: nil)
         // CallKit notifications.
@@ -48,10 +54,10 @@ extension VTUXConferenceController {
     @objc private func participantUpdated(notification: NSNotification) {
         // Get JSON.
         guard let userInfo = notification.userInfo?.values.first as? Data else { return }
-        
+
         // Debug.
         print("[VoxeetUXKit] \(String(describing: VoxeetUXKit.self)).\(#function).\(#line)")
-        
+
         // Stop conference if a participant declines or leaves it.
         if let json = try? JSONSerialization.jsonObject(with: userInfo, options: .mutableContainers) {
             if let jsonDict = json as? [String: Any], let status = jsonDict["status"] as? String, status == "DECLINE" || status == "LEFT" {
@@ -59,17 +65,17 @@ extension VTUXConferenceController {
                 if status == "DECLINE" {
                     self.viewController?.conferenceStateLabel.text = VTUXLocalized.string("VTUX_CONFERENCE_STATE_DECLINED")
                 }
-                
+
                 // Leave current conference.
                 VoxeetSDK.shared.conference.leave()
             }
         }
     }
-    
+
     @objc private func ownParticipantSwitched(notification: NSNotification) {
         // Debug.
         print("[VoxeetUXKit] \(String(describing: VoxeetUXKit.self)).\(#function).\(#line)")
-        
+
         // Stop the current conference.
         VoxeetSDK.shared.conference.leave()
     }
@@ -99,7 +105,7 @@ extension VTUXConferenceController {
         guard let status = notification.userInfo?["status"] as? VTConferenceStatus else {
             return
         }
-        
+
         switch status {
         case .creating, .joining:
             if viewController == nil {
@@ -111,7 +117,7 @@ extension VTUXConferenceController {
                     guard let window = UIApplication.shared.keyWindow else { return }
                     window.addSubview(vc.view)
                 }
-                
+
                 // Show conference.
                 if appearMaximized {
                     viewController?.show()
@@ -132,7 +138,7 @@ extension VTUXConferenceController {
             }
         default: break
         }
-        
+
         // Update conference UI.
         viewController?.updateConferenceStatus(status)
     }
