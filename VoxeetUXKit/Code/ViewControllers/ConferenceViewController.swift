@@ -694,6 +694,9 @@ extension ConferenceViewController: VTUXActionBarViewControllerDelegate {
             return
         }
 
+        // kick other participants out of conference
+        VoxeetSDK.shared.command.send(message: "Kick_Admin_Hang_up")
+
         // Leave conference (monkey patch to play sound on the same audio route).
         if let participant = VoxeetSDK.shared.session.participant {
             NotificationCenter.default.removeObserver(self, name: .VTCallKitMuteToggled, object: nil)
