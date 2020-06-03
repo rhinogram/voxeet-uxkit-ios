@@ -104,10 +104,12 @@ import VoxeetSDK
         flipButton.isEnabled(mode != .standard ? false : enabled, animated: true)
 
         if mode != .standard {
-            muteButton.isHidden = true
-            cameraButton.isHidden = true
-            screenShareButton.isHidden = true
-            flipButton.isHidden = true
+            UIView.animate(withDuration: 0.25, animations: {
+                self.muteButton.isHidden = true
+                self.cameraButton.isHidden = true
+                self.screenShareButton.isHidden = true
+                self.flipButton.isHidden = true
+            })
 
             cameraButton.tag = 0
         }
