@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vX9-VW-Q3b">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="vX9-VW-Q3b" customClass="ConferenceViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0gX-6N-twr">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W21-R7-Fb1">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zwJ-PR-ChP">
-                                        <rect key="frame" x="16" y="175.5" width="635" height="24"/>
+                                        <rect key="frame" x="16" y="321.5" width="343" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-Is-idg">
-                                        <rect key="frame" x="8" y="87.5" width="651" height="200"/>
+                                        <rect key="frame" x="8" y="233.5" width="359" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" priority="250" constant="200" id="tWt-9q-j6Z"/>
                                         </constraints>
@@ -35,19 +35,19 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-7n-Q0u">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="8Au-2j-3sL" kind="embed" id="wVa-ZQ-HSx"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNg-nY-rrN">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <connections>
                                             <segue destination="d8H-mt-b9e" kind="embed" id="4Fq-fI-VS2"/>
                                         </connections>
                                     </containerView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-1t-Np3" customClass="VTVideoView" customModule="VoxeetSDK">
-                                        <rect key="frame" x="8" y="200" width="74" height="97"/>
+                                        <rect key="frame" x="8" y="492" width="74" height="97"/>
                                         <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="Ysq-XW-6o9"/>
@@ -61,7 +61,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRz-PV-7pZ">
-                                        <rect key="frame" x="0.0" y="2" width="667" height="80"/>
+                                        <rect key="frame" x="0.0" y="2" width="375" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="4W8-fd-4kf"/>
                                         </constraints>
@@ -70,10 +70,10 @@
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqV-bw-3TT">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="25.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="x5u-BH-YcB">
-                                                <rect key="frame" x="309.5" y="3" width="48" height="19.5"/>
+                                                <rect key="frame" x="163.5" y="3" width="48" height="19.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="025-VK-rfT">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="19.5"/>
@@ -109,7 +109,7 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyF-Oy-fMh">
-                                        <rect key="frame" x="0.0" y="305" width="667" height="50"/>
+                                        <rect key="frame" x="0.0" y="597" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SeA-R7-z4s"/>
                                         </constraints>
@@ -158,14 +158,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" id="0dm-dN-l2x">
-                                <rect key="frame" x="0.0" y="14" width="667" height="37"/>
+                                <rect key="frame" x="0.0" y="25" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="w9A-5B-y04">
-                                        <rect key="frame" x="309.5" y="3" width="48" height="31"/>
+                                        <rect key="frame" x="163.5" y="3" width="48" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="s3K-1R-Etn">
-                                                <rect key="frame" x="0.0" y="0.0" width="48" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="60"/>
                                                 <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="j4Z-hQ-yad"/>
@@ -222,11 +222,11 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXParticipantsViewController" id="JvT-sH-dB0" customClass="VTUXParticipantsViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebQ-04-RVo">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rYz-xu-hjl">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="MU5-M6-fWx">
                                     <size key="itemSize" width="80" height="80"/>
@@ -316,11 +316,11 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerViewController" id="xxT-ES-Ghj" customClass="VTUXSpeakerViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G1w-wr-so6">
-                        <rect key="frame" x="0.0" y="0.0" width="651" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-Tf-i4P">
-                                <rect key="frame" x="268" y="29.5" width="115" height="141"/>
+                                <rect key="frame" x="122" y="29.5" width="115" height="141"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iK-9i-XAE" customClass="UIRoundImageView" customModule="VoxeetUXKit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
@@ -365,11 +365,11 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerVideoViewController" id="8Au-2j-3sL" customClass="VTUXSpeakerVideoViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pVH-yW-yZy">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xs9-bp-sbt" customClass="VTVideoView" customModule="VoxeetSDK">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="contentFill" value="YES"/>
@@ -398,11 +398,11 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXActionBarViewController" id="Q3B-h3-n53" customClass="VTUXActionBarViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ij3-dB-RZh">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-oG-ewf">
-                                <rect key="frame" x="184.5" y="0.0" width="298" height="50"/>
+                                <rect key="frame" x="38.5" y="0.0" width="298" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0p0-Ga-Fvj">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -496,14 +496,14 @@
             <objects>
                 <viewController storyboardIdentifier="VTUXSpeakerFilePresentationViewController" id="d8H-mt-b9e" customClass="VTUXSpeakerFilePresentationViewController" customModule="VoxeetUXKit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oOu-kT-T0U">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="g9B-JO-0hn">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="naL-xM-P3Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
