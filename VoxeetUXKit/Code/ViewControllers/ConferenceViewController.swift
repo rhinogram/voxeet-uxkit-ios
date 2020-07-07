@@ -133,7 +133,7 @@ class ConferenceViewController: OverlayViewController {
             hangUpSound?.volume = 0.4
             hangUpSound?.prepareToPlay()
         }
-        
+
         // Observer CallKit mute behaviour to update UI.
         NotificationCenter.default.addObserver(self, selector: #selector(callKitMuteToggled), name: .VTCallKitMuteToggled, object: nil)
         // Start / Stop video when application is on foreground/background.
@@ -344,6 +344,7 @@ class ConferenceViewController: OverlayViewController {
 
     private func alphaTransitionUI(minimized: Bool) {
         conferenceTimerContainerView.alpha = minimized ? 1 : 0
+        conferenceTimerLabelMain.alpha = minimized ? 0 : 1
         minimizeButton.alpha = minimized ? 0 : 1
         participantsVC.view.alpha = minimized ? 0 : 1
         actionBarVC.view.alpha = minimized ? 0 : 1
