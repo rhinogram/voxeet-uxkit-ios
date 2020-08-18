@@ -22,9 +22,12 @@ extension ConferenceViewController: VTConferenceDelegate {
         if (participant.status == .reserved || displayLeftParticipants) && !isSessionParticipant {
             participantsVC.append(participant: participant)
         }
+        NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: participant)
     }
 
-    func participantUpdated(participant: VTParticipant) {}
+    func participantUpdated(participant: VTParticipant) {
+        NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: participant)
+    }
 
     func streamAdded(participant: VTParticipant, stream: MediaStream) {
         // Monkey patch: Wait WebRTC media to be started (avoids sound button to blink).
@@ -48,6 +51,7 @@ extension ConferenceViewController: VTConferenceDelegate {
         }
 
         streamUpdated(participant: participant, stream: stream)
+        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: stream)
     }
 
     func streamUpdated(participant: VTParticipant, stream: MediaStream) {
@@ -58,6 +62,7 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamUpdated(participant: participant, stream: stream)
         default: break
         }
+        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: stream)
     }
 
     func streamRemoved(participant: VTParticipant, stream: MediaStream) {
@@ -68,6 +73,7 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamRemoved(participant: participant, stream: stream)
         default: break
         }
+        NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: stream)
     }
 
     private func cameraStreamUpdated(participant: VTParticipant, stream: MediaStream) {
