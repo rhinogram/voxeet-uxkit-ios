@@ -51,7 +51,7 @@ extension ConferenceViewController: VTConferenceDelegate {
         }
 
         streamUpdated(participant: participant, stream: stream)
-        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: ["stream": stream)
+        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: ["stream": stream])
     }
 
     func streamUpdated(participant: VTParticipant, stream: MediaStream) {
