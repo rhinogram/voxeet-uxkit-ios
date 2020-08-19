@@ -22,11 +22,16 @@ extension ConferenceViewController: VTConferenceDelegate {
         if (participant.status == .reserved || displayLeftParticipants) && !isSessionParticipant {
             participantsVC.append(participant: participant)
         }
-        NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: nil, userInfo: participant)
+
+        let dictionary: NSDictionary = [ "participant": participant]
+
+        NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: nil, userInfo: dictionary)
     }
 
     func participantUpdated(participant: VTParticipant) {
-        NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: nil, userInfo: participant)
+        let dictionary: NSDictionary = [ "participant": participant]
+
+        NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: nil, userInfo: dictionary)
     }
 
     func streamAdded(participant: VTParticipant, stream: MediaStream) {
@@ -51,7 +56,9 @@ extension ConferenceViewController: VTConferenceDelegate {
         }
 
         streamUpdated(participant: participant, stream: stream)
-        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: stream)
+        let dictionary: NSDictionary = [ "stream": stream]
+
+        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: dictionary)
     }
 
     func streamUpdated(participant: VTParticipant, stream: MediaStream) {
@@ -62,7 +69,9 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamUpdated(participant: participant, stream: stream)
         default: break
         }
-        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: stream)
+        let dictionary: NSDictionary = [ "stream": stream]
+
+        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: dictionary)
     }
 
     func streamRemoved(participant: VTParticipant, stream: MediaStream) {
@@ -73,7 +82,9 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamRemoved(participant: participant, stream: stream)
         default: break
         }
-        NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: nil, userInfo: stream)
+        let dictionary: NSDictionary = [ "stream": stream]
+
+        NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: nil, userInfo: dictionary)
     }
 
     private func cameraStreamUpdated(participant: VTParticipant, stream: MediaStream) {
