@@ -22,11 +22,11 @@ extension ConferenceViewController: VTConferenceDelegate {
         if (participant.status == .reserved || displayLeftParticipants) && !isSessionParticipant {
             participantsVC.append(participant: participant)
         }
-        NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: nil, userInfo: ["doot": true])
+        NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: nil, userInfo: participant)
     }
 
     func participantUpdated(participant: VTParticipant) {
-        NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: nil, userInfo: ["doot": true])
+        NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: nil, userInfo: participant)
     }
 
     func streamAdded(participant: VTParticipant, stream: MediaStream) {
@@ -51,7 +51,7 @@ extension ConferenceViewController: VTConferenceDelegate {
         }
 
         streamUpdated(participant: participant, stream: stream)
-        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: ["doot": true])
+        NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: stream)
     }
 
     func streamUpdated(participant: VTParticipant, stream: MediaStream) {
@@ -62,7 +62,7 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamUpdated(participant: participant, stream: stream)
         default: break
         }
-        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: ["doot": true])
+        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: stream)
     }
 
     func streamRemoved(participant: VTParticipant, stream: MediaStream) {
@@ -73,7 +73,7 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamRemoved(participant: participant, stream: stream)
         default: break
         }
-        NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: nil, userInfo: ["doot": true])
+        NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: nil, userInfo: stream)
     }
 
     private func cameraStreamUpdated(participant: VTParticipant, stream: MediaStream) {
