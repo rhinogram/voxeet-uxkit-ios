@@ -22,13 +22,25 @@ extension ConferenceViewController: VTConferenceDelegate {
         if (participant.status == .reserved || displayLeftParticipants) && !isSessionParticipant {
             participantsVC.append(participant: participant)
         }
+        var status: String
+        if (participant.status == .connected) {
+            status = "connected"
+        } else {
+            status = "left"
+        }
 
-        let dataDict:[String: Any] = ["participantId": participant.id, "status": participant.status.connected ? "connected" : "left"]
+        let dataDict:[String: Any] = ["participantId": participant.id, "status": status]
         NotificationCenter.default.post(name: Notification.Name("participantAdded"), object: nil, userInfo: dataDict)
     }
 
     func participantUpdated(participant: VTParticipant) {
-        let dataDict:[String: Any] = ["participantId": participant.id, "status": participant.status.connected ? "connected" : "left"]
+        var status: String
+        if (participant.status == .connected) {
+            status = "connected"
+        } else {
+            status = "left"
+        }
+        let dataDict:[String: Any] = ["participantId": participant.id, "status": status]
         NotificationCenter.default.post(name: Notification.Name("participantUpdated"), object: nil, userInfo: dataDict)
     }
 
@@ -54,8 +66,14 @@ extension ConferenceViewController: VTConferenceDelegate {
         }
 
         streamUpdated(participant: participant, stream: stream)
+        var status: String
+        if (participant.status == .connected) {
+            status = "connected"
+        } else {
+            status = "left"
+        }
 
-        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": participant.status.connected ? "connected" : "left"]
+        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status]
         NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: dataDict)
     }
 
@@ -67,8 +85,14 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamUpdated(participant: participant, stream: stream)
         default: break
         }
+        var status: String
+        if (participant.status == .connected) {
+            status = "connected"
+        } else {
+            status = "left"
+        }
 
-        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": participant.status.connected ? "connected" : "left"]
+        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status]
         NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: dataDict)
     }
 
@@ -80,8 +104,14 @@ extension ConferenceViewController: VTConferenceDelegate {
             screenShareStreamRemoved(participant: participant, stream: stream)
         default: break
         }
+        var status: String
+        if (participant.status == .connected) {
+            status = "connected"
+        } else {
+            status = "left"
+        }
 
-        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": participant.status.connected ? "connected" : "left"]
+        let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status]
         NotificationCenter.default.post(name: Notification.Name("streamRemoved"), object: nil, userInfo: dataDict)
     }
 
