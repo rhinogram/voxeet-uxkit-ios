@@ -16,7 +16,6 @@
 		CCADC3CA1EBA0A8200B85516 /* CallKitSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCADC3C91EBA0A8200B85516 /* CallKitSound.mp3 */; };
 		CCB49B122189B076003DD11C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCB49B142189B076003DD11C /* Localizable.strings */; };
 		FAD66FFB23F43AD40052D724 /* VoxeetUXKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD66FF823F43AD40052D724 /* VoxeetUXKit.framework */; };
-		FAD66FFC23F43AD40052D724 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD66FF923F43AD40052D724 /* WebRTC.framework */; };
 		FAD66FFD23F43AD40052D724 /* VoxeetSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD66FFA23F43AD40052D724 /* VoxeetSDK.framework */; };
 		FAFAFFC523A7929300840B17 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFAFFC423A7929300840B17 /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		CCB49B132189B076003DD11C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CCB49B152189B092003DD11C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAD66FF823F43AD40052D724 /* VoxeetUXKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VoxeetUXKit.framework; path = Carthage/Build/iOS/VoxeetUXKit.framework; sourceTree = SOURCE_ROOT; };
-		FAD66FF923F43AD40052D724 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Carthage/Build/iOS/WebRTC.framework; sourceTree = SOURCE_ROOT; };
 		FAD66FFA23F43AD40052D724 /* VoxeetSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VoxeetSDK.framework; path = Carthage/Build/iOS/VoxeetSDK.framework; sourceTree = SOURCE_ROOT; };
 		FAFAFFC423A7929300840B17 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -61,7 +59,6 @@
 				FAD66FFD23F43AD40052D724 /* VoxeetSDK.framework in Frameworks */,
 				FAFAFFC523A7929300840B17 /* SDWebImage.framework in Frameworks */,
 				FAD66FFB23F43AD40052D724 /* VoxeetUXKit.framework in Frameworks */,
-				FAD66FFC23F43AD40052D724 /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +100,6 @@
 			children = (
 				FAD66FF823F43AD40052D724 /* VoxeetUXKit.framework */,
 				FAD66FFA23F43AD40052D724 /* VoxeetSDK.framework */,
-				FAD66FF923F43AD40052D724 /* WebRTC.framework */,
 				FAFAFFC423A7929300840B17 /* SDWebImage.framework */,
 			);
 			name = Frameworks;
@@ -246,14 +242,12 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/VoxeetUXKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/VoxeetSDK.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/WebRTC.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
 			);
 			name = "Carthage Run Script";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/VoxeetUXKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/VoxeetSDK.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/WebRTC.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
