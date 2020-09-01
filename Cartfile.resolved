@@ -1,2 +1,2 @@
-binary "https://raw.githubusercontent.com/rhinogram/voxeet-sdk-ios/updates/VoxeetSDK.json" "2.3.0"
+github "marymhart/vsdk"
 github "SDWebImage/SDWebImage" "5.7.4"
