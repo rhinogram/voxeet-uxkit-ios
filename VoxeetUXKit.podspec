@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
   spec.license = "MIT"
   spec.author = "Voxeet"
   spec.homepage = "https://voxeet.com"
-  spec.platform = :ios, "9.0"
+  spec.platform = :ios, "11.0"
   spec.swift_version = "5.2.2"
   spec.source = { :git => "https://github.com/voxeet/voxeet-uxkit-ios.git", :tag => spec.version }
   spec.framework = "VoxeetUXKit"
