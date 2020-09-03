@@ -73,7 +73,7 @@ extension ConferenceViewController: VTConferenceDelegate {
           status = "left"
       }
 
-      let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status]
+      let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status, "videoTracks": stream.videoTracks]
       NotificationCenter.default.post(name: Notification.Name("streamAdded"), object: nil, userInfo: dataDict)
     }
 
@@ -92,7 +92,7 @@ extension ConferenceViewController: VTConferenceDelegate {
            status = "left"
        }
 
-       let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status]
+       let dataDict:[String: Any] = ["streamId": stream.streamId, "participantId": participant.id, "hasVideo": !stream.videoTracks.isEmpty, "status": status, "videoTracks": stream.videoTracks]
        NotificationCenter.default.post(name: Notification.Name("streamUpdated"), object: nil, userInfo: dataDict)
     }
 
